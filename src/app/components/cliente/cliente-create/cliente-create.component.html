@@ -6,7 +6,7 @@
         <section class="section">
             <mat-checkbox (click)="addPerfil(0)" class="margin" color="primary">Admin</mat-checkbox>
             <mat-checkbox (click)="addPerfil(1)" class="margin" color="primary">Cliente</mat-checkbox>
-            <mat-checkbox (click)="addPerfil(2)" [checked]="true" class="margin" color="primary">Cliente</mat-checkbox>
+            
         </section>
 
         <mat-form-field class="fullWidth" appearance="legacy">
@@ -17,7 +17,7 @@
             [formControl]="nome"
             required 
             matInput 
-            placeholder="Ex. Fulano de Tal"
+            placeholder="Ex. João da Silva"
             maxlength="50">
             <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
           </mat-form-field>
@@ -43,7 +43,7 @@
             [formControl]="email"
             required
             matInput 
-            placeholder="Ex. seuemail@email.com">
+            placeholder="Ex. danilo@email.com">
             <mat-icon matSuffix>email</mat-icon>
           </mat-form-field>
 
@@ -56,13 +56,39 @@
             required
             type="password" 
             matInput 
-            placeholder="Ex. 1234">
+            placeholder="Ex. 123456">
             <mat-icon matSuffix>password</mat-icon>
+          </mat-form-field>
+
+          <mat-form-field class="fullWidth" appearance="legacy">
+            <mat-label>Data de Nascimento</mat-label>
+            <input 
+            [(ngModel)]="cliente.senha"
+            name="senha"
+            [formControl]="senha"
+            required
+            type="password" 
+            matInput 
+            placeholder="Ex. 01/01/2023">
+            <mat-icon matSuffix>calendar_today</mat-icon>
+          </mat-form-field>
+
+          <mat-form-field class="fullWidth" appearance="legacy">
+            <mat-label>Sexo</mat-label>
+            <input 
+            [(ngModel)]="cliente.senha"
+            name="senha"
+            [formControl]="senha"
+            required
+            type="password" 
+            matInput 
+            placeholder="Digite F ou M">
+            <mat-icon matSuffix>android</mat-icon>
           </mat-form-field>
 
           <button (click)="create()" [disabled]="!validaCampos()" mat-flat-button class="fullWidth" color="primary">Cadastrar</button>
           <button routerLink="../" mat-stroked-button class="fullWidth" color="warn">Cancelar</button>
     </form>
 
-    <p class="fullWidth">by Eduardo Silva</p>
+
 </div>

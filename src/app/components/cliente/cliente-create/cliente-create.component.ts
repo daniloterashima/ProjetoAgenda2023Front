@@ -26,6 +26,9 @@ export class ClienteCreateComponent implements OnInit {
   cpf: FormControl = new FormControl(null, Validators.required);
   email: FormControl = new FormControl(null, Validators.email);
   senha: FormControl = new FormControl(null, Validators.minLength(3));
+  dataNascimento: FormControl = new FormControl(null, Validators.minLength(3));
+  sexo: FormControl = new FormControl(null, Validators.minLength(3));
+
 
   constructor(
     private service: ClienteService,
